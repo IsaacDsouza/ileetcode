@@ -9,4 +9,4 @@ class Solution:
             res[tuple(count)].append(s)
         return res.values()
 solution=Solution()
-print(solution.groupAnagram(["eat","tea","tan","ate","nat","bat"]))
+print(solution.groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
