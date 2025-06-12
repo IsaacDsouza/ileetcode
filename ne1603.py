@@ -1,4 +1,4 @@
-#1603. Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.
+#1603.Design a parking system for a parking lot. The parking lot has three kinds of parking spaces: big, medium, and small, with a fixed number of slots for each size.
 class ParkingSystem:
 
     def __init__(self, big: int, medium: int, small: int):
