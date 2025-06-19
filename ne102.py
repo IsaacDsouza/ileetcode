@@ -10,7 +10,7 @@ class TreeNode:
 
 
 class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> list[int]:
+    def levelOrder(self, root: Optional[TreeNode]) -> list[list[int]]:
         res=[]
         q= []
         q.append(root)
