@@ -2,22 +2,21 @@
 
 class Solution:
     def maxAreaOfIsland(self, grid: list[list[int]]) -> int:
-        d=[(1,0),(0,1),(-1,0),(0,-1)]
-        maxi=0
+        m,n = len(grid), len(grid[0])
+
         def dfs(i,j):
-            if 0<=i<len(grid) and 0<=j<len(grid[0]) and grid[i][j]==1:
+            if i<0 or i>=m or j<0 or j>=n or grid[i][j]!=1:
+                return 0
+            else:
                 grid[i][j]=0
-                cnt=1
-                for dr,dc in d:
-                    nr,nc=i+dr,j+dc
-                    cnt+=dfs(nr,nc)
-                return cnt
-            return 0
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
+                return 1+dfs(i,j+1)+dfs(i+1,j)+dfs(i,j-1)+dfs(i-1,j)
+
+        max_area=0
+        for i in range(m):
+            for j in range(n):
                 if grid[i][j]==1:
-                    maxi=max(maxi,dfs(i,j))
-        return maxi
+                    max_area=max(max_area, dfs(i,j))
+        return max_area
         
 solution=Solution()
 print(solution.maxAreaOfIsland([[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]))
