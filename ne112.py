@@ -16,3 +16,4 @@ class Solution:
                 return curSum==targetSum
             return (dfs(node.left, curSum),dfs(node.right, curSum))
         return dfs(root, 0)
+
