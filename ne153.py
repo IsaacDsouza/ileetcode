@@ -9,7 +9,7 @@ class Solution:
             m=(l+r)//2
 
             if nums[m]>nums[r]:
-                l+=1
+                l=m+1
             else:
                 r=m
         
