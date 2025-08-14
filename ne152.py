@@ -2,6 +2,7 @@
 
 class Solution:
     def maxProduct(self, nums: list[int]) -> int:
+        #kadanes algo
         res=nums[0]
         curMin, curMax = 1, 1
         
