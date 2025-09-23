@@ -1,13 +1,15 @@
 class Solution:
-    def twoSum(self, nums: [int], target: int) -> [int]:
-        prevMap = {}
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        prevImap = {}
+        n=len(nums)
+        for i in range(n):
+            complement=target-nums[i]
+            if complement in prevImap:
+                return [prevImap[complement], i]
+            prevImap[nums[i]]=i
         
-        for i,n in enumerate(nums):
-            diff = target - n
-            if diff in prevMap:
-                return [prevMap[diff],i]
-            prevMap[n]=i
-        return
+        
+        return []
     
 solution=Solution()
 print(solution.twoSum(nums = [2,7,11,15], target = 9))
