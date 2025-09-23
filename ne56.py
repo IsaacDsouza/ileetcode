@@ -4,12 +4,15 @@ class Solution:
     def merge(self, intervals: list[list[int]]) -> list[list[int]]:
         intervals.sort(key=lambda interval: interval[0])
         merged = []
-
+        
+        prev = intervals[0]
         for interval in intervals:
-            if not merged or merged[-1][1] < interval[0]:
-                merged.append(interval)
+            if interval[0]<=prev[1]:
+                prev[1]=max(prev[1], interval[1])
             else:
-                merged[-1]= [ merged[-1][0], max(merged[-1][1], interval[1])]
+                merged.append(prev)
+                prev=interval
+            
         return merged
 
 solution = Solution()
