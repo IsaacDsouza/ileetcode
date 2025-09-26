@@ -17,7 +17,7 @@ class Solution:
             if not(root.val>left and right>root.val):
                 return False
             
-            return(valid(root.left, left, root.val) and self.valid(root.right,root.val,right))
+            return(valid(root.left, left, root.val) and valid(root.right,root.val,right))
         return (valid(root, float('-inf'), float('inf')))
     
        
