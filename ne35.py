@@ -12,10 +12,7 @@ class Solution:
                 r=m-1
             else:
                 return m
-        if nums[m]<target:
-            return m+1
-        else:
-            return m
+        return l
 
 solution = Solution()
 print(solution.searchInsert([1,3,5,6],2))
